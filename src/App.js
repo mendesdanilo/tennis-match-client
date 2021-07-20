@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Signup from "./components/Signup";
+import Login from "./components/Login";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
+import { Route, Switch } from "react-router-dom";
+import UserList from "./components/UserList";
+
+class App extends React.Component {
+  state = {
+    loggedInUser: null,
+  };
+  setLoggedInUser = (user) => {
+    this.setState({
+      loggedInUser: user,
+    });
+  };
+  render() {
+    return (
+      <div className="App">
+        <ToastContainer />
+        <Navbar loggedInUser={this.state.loggedInUser} />
+        <Switch>
+          <Route exact path="/" component={UserList} />
+          <Route exact path="/signup" component={Signup} />
+          <Route
+            exact
+            path="/login"
+            render={(props) => {
+              return (
+                <Login {...props} setLoggedInUser={this.setLoggedInUser} />
+              );
+            }}
+          />
+        </Switch>
+      </div>
+    );
+  }
 }
-
 export default App;
