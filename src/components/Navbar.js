@@ -4,19 +4,19 @@ import { NavLink } from "react-router-dom";
 function Navbar({ loggedInUser }) {
   return (
     <>
-      {loggedInUser && <p>Welcome {loggedInUser.username}</p>}
-      <ul>
-        <li>
+      <div>
+        <div>
           <NavLink activeStyle={{ color: "red" }} exact to="/login">
             Login
           </NavLink>
-        </li>
-        <li>
+        </div>
+        <div>
           <NavLink activeStyle={{ color: "red" }} exact to="/signup">
             Signup
           </NavLink>
-        </li>
-      </ul>
+        </div>
+        {loggedInUser && <p>Welcome {loggedInUser.username}</p>}
+      </div>
     </>
   );
 }

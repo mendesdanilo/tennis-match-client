@@ -3,12 +3,11 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
-
+import UserList from "./components/UserList";
 
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { Route, Switch } from "react-router-dom";
-import UserList from "./components/UserList";
 
 class App extends React.Component {
   state = {
