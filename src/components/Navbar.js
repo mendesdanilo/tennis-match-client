@@ -1,24 +1,37 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { logout } from "../api";
 
-function Navbar({ loggedInUser }) {
-  return (
+function Navbar({ loggedInUser, setLoggedInUser }) {
+  const logoutUser = async () => {
+    await logout();
+    setLoggedInUser(null);
+  };
+
+  return loggedInUser ? (
     <>
-      <div>
-        <div>
-          <NavLink activeStyle={{ color: "red" }} exact to="/login">
-            Login
+      <p>Welcome {loggedInUser.username}</p>
+      <ul>
+        <li>
+          <NavLink to="/">
+            <button onClick={logoutUser}>Logout</button>
           </NavLink>
-        </div>
-        <div>
-          <NavLink activeStyle={{ color: "red" }} exact to="/signup">
-            Signup
-          </NavLink>
-        </div>
-        {loggedInUser && <p>Welcome {loggedInUser.username}</p>}
-      </div>
+        </li>
+      </ul>
     </>
+  ) : (
+    <ul>
+      <li>
+        <NavLink activeStyle={{ color: "red" }} exact to="/login">
+          Login
+        </NavLink>
+      </li>
+      <li>
+        <NavLink activeStyle={{ color: "red" }} exact to="/signup">
+          Signup
+        </NavLink>
+      </li>
+    </ul>
   );
 }
-
 export default Navbar;

@@ -9,8 +9,9 @@ class UserList extends React.Component {
 
   async componentDidMount() {
     const response = await getAllUsers();
+    console.log("test", response);
     this.setState({
-      users: response.data,
+      users: response.data.allUsers,
     });
   }
 
@@ -22,7 +23,7 @@ class UserList extends React.Component {
           {this.state.users.map((user) => {
             return (
               <li key={user._id}>
-                <NavLink to={`/users/${user._id}`}>{user.role}</NavLink>
+                <NavLink to={`/users/${user._id}`}>{user.username}</NavLink>
               </li>
             );
           })}
