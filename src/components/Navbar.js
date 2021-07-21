@@ -10,7 +10,7 @@ function Navbar({ loggedInUser, setLoggedInUser }) {
 
   return loggedInUser ? (
     <>
-      <p>Welcome {loggedInUser.username}</p>
+      <p>Welcome {loggedInUser.username} !</p>
       <ul>
         <li>
           <NavLink to="/">

@@ -50,7 +50,7 @@ class Signup extends React.Component {
             >
               <option value="">Select</option>
               <option value="coach">Coach</option>
-              <option value="student">Student</option>
+              <option value="athlete">Athlete</option>
             </select>
             <label>Men or Women</label>
             <select

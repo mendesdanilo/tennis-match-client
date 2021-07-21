@@ -4,6 +4,8 @@ import Navbar from "./components/Navbar";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import UserList from "./components/UserList";
+import UserDetails from "./components/UserDetails";
+
 import PrivateRoute from "./components/PrivateRoute";
 import { loggedIn } from "./api";
 
@@ -15,6 +17,7 @@ class App extends React.Component {
   state = {
     loggedInUser: null,
   };
+
   setLoggedInUser = (user) => {
     this.setState({
       loggedInUser: user,
@@ -40,6 +43,7 @@ class App extends React.Component {
         />
         <Switch>
           <PrivateRoute exact path="/" component={UserList} />
+          <Route exact path="/users/:id" component={UserDetails} />
           <Route exact path="/signup" component={Signup} />
           <Route
             exact
@@ -55,4 +59,5 @@ class App extends React.Component {
     );
   }
 }
+
 export default App;

@@ -9,7 +9,7 @@ class UserList extends React.Component {
 
   async componentDidMount() {
     const response = await getAllUsers();
-    console.log("test", response);
+    //console.log("test", response);
     this.setState({
       users: response.data.allUsers,
     });
