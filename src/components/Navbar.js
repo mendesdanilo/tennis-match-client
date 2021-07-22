@@ -16,6 +16,7 @@ function Navbar({ loggedInUser, setLoggedInUser }) {
           <NavLink to="/">
             <button onClick={logoutUser}>Logout</button>
           </NavLink>
+          <NavLink to="/favorites">Favorites</NavLink>
         </li>
       </ul>
     </>

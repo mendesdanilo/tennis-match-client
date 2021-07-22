@@ -19,6 +19,10 @@ export const addFavorite = (userId) => {
   });
 };
 
+export const allFavorites = () => {
+  return axios.get(`${baseURL}/favorites`, { withCredentials: true });
+};
+
 /*AUTHENTICATION API ROUTES*/
 
 export const signup = (user) => {

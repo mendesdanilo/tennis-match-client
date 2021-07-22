@@ -5,6 +5,7 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import UserList from "./components/UserList";
 import UserDetails from "./components/UserDetails";
+import FavoritesList from "./components/FavoritesList";
 
 import PrivateRoute from "./components/PrivateRoute";
 import { loggedIn } from "./api";
@@ -45,6 +46,7 @@ class App extends React.Component {
           <PrivateRoute exact path="/" component={UserList} />
           <Route exact path="/users/:id" component={UserDetails} />
           <Route exact path="/signup" component={Signup} />
+          <Route exact path="/favorites" component={FavoritesList} />
           <Route
             exact
             path="/login"

@@ -9,20 +9,20 @@ class FavoritesList extends React.Component {
   async componentDidMount() {
     const response = await allFavorites();
     //console.log("test", response);
+    console.log(response.data);
     this.setState({
-      users: response.data.allUsers,
+      favorites: response.data,
     });
+    console.log(this.state);
   }
 
   render() {
     return (
       <>
-        <h3>List of Favorites</h3>
-        <ul>
-          {this.state.users.map((user) => {
-            return <p>{user.username}</p>;
-          })}
-        </ul>
+        <p>Favorites</p>
+        {this.state.favorites.map((favorite) => {
+          return <p> {favorite.username} </p>;
+        })}
       </>
     );
   }
