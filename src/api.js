@@ -12,6 +12,13 @@ export const getUser = (userId) => {
   return axios.get(`${baseURL}/users/${userId}`);
 };
 
+export const addFavorite = (userId) => {
+  return axios.post(`${baseURL}/user/${userId}/addFavorite`, null, {
+    withCredentials: true,
+    // null porque a funcao espera 3 argumentos, url, body e with credentials
+  });
+};
+
 /*AUTHENTICATION API ROUTES*/
 
 export const signup = (user) => {

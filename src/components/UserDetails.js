@@ -1,6 +1,6 @@
 import React from "react";
-import { getUser } from "../api";
-import { NavLink } from "react-router-dom";
+import { getUser, addFavorite } from "../api";
+import { toast } from "react-toastify";
 
 class UserDetails extends React.Component {
   state = {
@@ -16,20 +16,22 @@ class UserDetails extends React.Component {
     });
   }
 
+  addToFavorite = async () => {
+    // await getUser (this.state.userId);
+    await addFavorite(this.props.match.params.id);
+    //success message
+    toast.success("Added to favorites!");
+    //redirects to all favorites list
+    this.props.history.push("/favorites");
+  };
+
   render() {
-    const { id, username } = this.state;
+    const { username } = this.state;
     return (
       <>
         <p>{username}</p>
         <div>
-          <button
-            onClick={() => {
-              this.props.history.push(`/users/${id}/edit`);
-            }}
-          >
-            Edit
-          </button>
-          <NavLink to={`/users/${id}/edit`}>Edit</NavLink>
+          <button onClick={this.addToFavorite}>Like</button>
         </div>
       </>
     );
