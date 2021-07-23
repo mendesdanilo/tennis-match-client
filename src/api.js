@@ -23,6 +23,22 @@ export const allFavorites = () => {
   return axios.get(`${baseURL}/favorites`, { withCredentials: true });
 };
 
+//profile
+export const getProfile = () => {
+  return axios.get(`${baseURL}/currentuser`, {
+    withCredentials: true,
+    // null porque a funcao espera 3 argumentos, url, body e with credentials
+  });
+};
+
+export const uploadFile = (uploadData) => {
+  return axios.post(`${baseURL}/upload`, uploadData);
+};
+
+export const updateProfile = (updatedProfile) => {
+  return axios.put(`${baseURL}/profile/${updatedProfile.id}`, updatedProfile);
+};
+
 /*AUTHENTICATION API ROUTES*/
 
 export const signup = (user) => {

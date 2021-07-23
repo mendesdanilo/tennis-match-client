@@ -2,7 +2,6 @@ import React from "react";
 import { signup } from "../api";
 import { NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
-import { DropdownButton, Dropdown } from "react-bootstrap";
 
 class Signup extends React.Component {
   state = {
@@ -33,15 +32,9 @@ class Signup extends React.Component {
     const { role, gender, username, password } = this.state;
     return (
       <>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          <form style={{ width: "300px" }} onSubmit={this.handleFormSubmit}>
-            <label>User Type</label>
+        <div>
+          <form className="signup" onSubmit={this.handleFormSubmit}>
+            <label>I am</label>
             <select
               className="form-select"
               name="role"

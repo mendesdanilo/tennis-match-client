@@ -4,7 +4,10 @@ import { toast } from "react-toastify";
 
 class UserDetails extends React.Component {
   state = {
+    imageUrl: "",
     username: "",
+    name: "",
+    lastname: "",
     id: "",
   };
 
@@ -12,7 +15,10 @@ class UserDetails extends React.Component {
     const response = await getUser(this.props.match.params.id);
     this.setState({
       id: response.data._id,
+      imageUrl: response.data.imageUrl,
       username: response.data.username,
+      name: response.data.name,
+      lastname: response.data.lastname,
     });
   }
 
@@ -26,10 +32,13 @@ class UserDetails extends React.Component {
   };
 
   render() {
-    const { username } = this.state;
+    const { imageUrl, username, name, lastname } = this.state;
     return (
       <>
+        <p>{imageUrl}</p>
         <p>{username}</p>
+        <p>{name}</p>
+        <p>{lastname}</p>
         <div>
           <button onClick={this.addToFavorite}>Like</button>
         </div>

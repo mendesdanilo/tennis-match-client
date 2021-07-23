@@ -18,16 +18,16 @@ class UserList extends React.Component {
   render() {
     return (
       <>
-        <h3>List of Users</h3> 
-        <ul>
+        <h3>List of Users</h3>
+        <div>
           {this.state.users.map((user) => {
             return (
-              <li key={user._id}>
+              <div key={user._id}>
                 <NavLink to={`/users/${user._id}`}>{user.username}</NavLink>
-              </li>
+              </div>
             );
           })}
-        </ul>
+        </div>
       </>
     );
   }

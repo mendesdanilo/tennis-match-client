@@ -1,11 +1,11 @@
 import React from "react";
-import "./App.css";
 import Navbar from "./components/Navbar";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import UserList from "./components/UserList";
 import UserDetails from "./components/UserDetails";
 import FavoritesList from "./components/FavoritesList";
+import Profile from "./components/Profile";
 
 import PrivateRoute from "./components/PrivateRoute";
 import { loggedIn } from "./api";
@@ -13,6 +13,8 @@ import { loggedIn } from "./api";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { Route, Switch } from "react-router-dom";
+
+import "./App.css";
 
 class App extends React.Component {
   state = {
@@ -36,7 +38,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div>
         <ToastContainer />
         <Navbar
           loggedInUser={this.state.loggedInUser}
@@ -47,6 +49,7 @@ class App extends React.Component {
           <Route exact path="/users/:id" component={UserDetails} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/favorites" component={FavoritesList} />
+          <Route exact path="/profile" component={Profile} />
           <Route
             exact
             path="/login"
