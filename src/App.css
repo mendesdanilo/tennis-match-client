@@ -1,14 +1,19 @@
 
 .signup {
-  margin-left: 600px;
-  margin-right: 600px;
-}
-
-p {
-  margin-left: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 500px;
+  margin-right: 500px;
 }
 
 .login {
-  margin-left: 450px;
+  display: flex;
+  justify-content: center;
+}
+
+p {
+  display: flex;
+  justify-content: center;
 }
 

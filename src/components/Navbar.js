@@ -12,7 +12,9 @@ function Navbar({ loggedInUser, setLoggedInUser }) {
   return loggedInUser ? (
     <>
       <nav class="navbar navbar-light bg-light">
-        <p>Welcome {loggedInUser.username} !</p>
+        <nav>
+          <p>Welcome {loggedInUser.username} !</p>
+        </nav>
         <NavLink to="/profile">Profile</NavLink>
         <NavLink to="/favorites">Favorites</NavLink>
         <NavLink to="/favorites">Matches</NavLink>
@@ -24,11 +26,11 @@ function Navbar({ loggedInUser, setLoggedInUser }) {
   ) : (
     <>
       <nav class="navbar navbar-light bg-light">
-        <form class="form-inline">
-          <NavLink className="btn btn-outline-success" exact to="/login">
+        <form className="form-inline">
+          <NavLink className="btn btn-outline-primary" exact to="/login">
             Login
           </NavLink>
-          <NavLink className="btn btn-outline-success" exact to="/signup">
+          <NavLink className="btn btn-outline-primary" exact to="/signup">
             Signup
           </NavLink>
         </form>

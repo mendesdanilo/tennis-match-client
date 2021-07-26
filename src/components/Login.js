@@ -21,7 +21,7 @@ class Login extends React.Component {
       const user = await login(this.state);
       this.props.setLoggedInUser(user.data);
       toast.success("Login successful");
-      this.props.history.push("/");
+      this.props.history.push("/users");
     } catch (e) {
       toast.error("Invalid login");
     }
@@ -33,26 +33,36 @@ class Login extends React.Component {
       <>
         <div className="login">
           <form onSubmit={this.handleFormSubmit}>
-            <label>Username</label>
-            <input
-              type="text"
-              name="username"
-              onChange={this.handleChange}
-              value={username}
-            />
-            <label>Password</label>
-            <input
-              type="password"
-              name="password"
-              onChange={this.handleChange}
-              value={password}
-            />
-            <button type="submit">Login</button>
+            <div className="login">
+              <label>Username</label>
+              <input
+                type="text"
+                name="username"
+                onChange={this.handleChange}
+                value={username}
+              />
+            </div>
+            <div>
+              <label>Password</label>
+              <input
+                type="password"
+                name="password"
+                onChange={this.handleChange}
+                value={password}
+              />
+            </div>
+            <div className="login">
+              <button className="login" type="submit">
+                Login
+              </button>
+            </div>
           </form>
         </div>
-        <p>
-          Don't have an account? <NavLink to="/signup">Signup</NavLink>
-        </p>
+        <div className="login">
+          <p>
+            Don't have an account? <NavLink to="/signup">Signup</NavLink>
+          </p>
+        </div>
       </>
     );
   }

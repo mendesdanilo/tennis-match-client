@@ -6,6 +6,10 @@ import UserList from "./components/UserList";
 import UserDetails from "./components/UserDetails";
 import FavoritesList from "./components/FavoritesList";
 import Profile from "./components/Profile";
+import Header from "./components/Header";
+import TinderCards from "./components/TinderCards";
+import SwipeButtons from "./components/SwipeButtons";
+import Home from "./components/Home";
 
 import PrivateRoute from "./components/PrivateRoute";
 import { loggedIn } from "./api";
@@ -45,7 +49,13 @@ class App extends React.Component {
           setLoggedInUser={this.setLoggedInUser}
         />
         <Switch>
-          <PrivateRoute exact path="/" component={UserList} />
+          {/* <PrivateRoute exact path="/" component={UserList} /> */}
+          <Route exact path="/" component={Home} />
+          <Route exact path="/users">
+            <Header />
+            <UserList />
+            <SwipeButtons />
+          </Route>
           <Route exact path="/users/:id" component={UserDetails} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/favorites" component={FavoritesList} />
