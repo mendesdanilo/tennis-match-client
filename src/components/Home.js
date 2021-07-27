@@ -1,12 +1,14 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import "./Home.css";
 
-function Home({ loggedInUser, setLoggedInUser }) {
+function Home() {
   return (
     <>
-      <h1> TennisMatch </h1>
-      <h3> Connecting players to coaches</h3>
+      <div className="tennis-section">
+        <h1>TennisMatch</h1>
+        <img className="tennis-image" alt="" src="/images/tennisgirl.png" />
+        <img className="tennis-image" alt="" src="/images/tennisboy.png" />
+      </div>
     </>
   );
 }

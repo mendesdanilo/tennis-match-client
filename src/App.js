@@ -6,17 +6,15 @@ import UserList from "./components/UserList";
 import UserDetails from "./components/UserDetails";
 import FavoritesList from "./components/FavoritesList";
 import Profile from "./components/Profile";
-import Header from "./components/Header";
-import TinderCards from "./components/TinderCards";
 import SwipeButtons from "./components/SwipeButtons";
 import Home from "./components/Home";
-
 import PrivateRoute from "./components/PrivateRoute";
-import { loggedIn } from "./api";
-
 import "react-toastify/dist/ReactToastify.css";
+
+import { loggedIn } from "./api";
 import { ToastContainer } from "react-toastify";
 import { Route, Switch } from "react-router-dom";
+import "nes.css/css/nes.min.css";
 
 import "./App.css";
 
@@ -52,7 +50,6 @@ class App extends React.Component {
           {/* <PrivateRoute exact path="/" component={UserList} /> */}
           <Route exact path="/" component={Home} />
           <Route exact path="/users">
-            <Header />
             <UserList />
             <SwipeButtons />
           </Route>

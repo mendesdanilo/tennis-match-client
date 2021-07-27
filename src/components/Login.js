@@ -31,37 +31,44 @@ class Login extends React.Component {
     const { username, password } = this.state;
     return (
       <>
-        <div className="login">
-          <form onSubmit={this.handleFormSubmit}>
-            <div className="login">
-              <label>Username</label>
-              <input
-                type="text"
-                name="username"
-                onChange={this.handleChange}
-                value={username}
-              />
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-md-4 mx-auto">
+              <form onSubmit={this.handleFormSubmit}>
+                <label>Username</label>
+                <input
+                  type="text"
+                  name="username"
+                  onChange={this.handleChange}
+                  value={username}
+                  className="input-group-text"
+                />
+                <label>Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  onChange={this.handleChange}
+                  value={password}
+                  className="input-group-text"
+                />
+                <button
+                  className="btn btn-outline-primary mx-auto"
+                  type="submit"
+                >
+                  Login
+                </button>
+                <p>
+                  Don't have an account?
+                  <NavLink
+                    className="btn btn-outline-primary btn-sm"
+                    to="/signup"
+                  >
+                    Signup
+                  </NavLink>
+                </p>
+              </form>
             </div>
-            <div>
-              <label>Password</label>
-              <input
-                type="password"
-                name="password"
-                onChange={this.handleChange}
-                value={password}
-              />
-            </div>
-            <div className="login">
-              <button className="login" type="submit">
-                Login
-              </button>
-            </div>
-          </form>
-        </div>
-        <div className="login">
-          <p>
-            Don't have an account? <NavLink to="/signup">Signup</NavLink>
-          </p>
+          </div>
         </div>
       </>
     );

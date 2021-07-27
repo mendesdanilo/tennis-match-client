@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { logout } from "../api";
+import SportsTennisIcon from "@material-ui/icons/SportsTennis";
 import "./Navbar.css";
 
 function Navbar({ loggedInUser, setLoggedInUser }) {
@@ -12,25 +13,34 @@ function Navbar({ loggedInUser, setLoggedInUser }) {
   return loggedInUser ? (
     <>
       <nav class="navbar navbar-light bg-light">
-        <nav>
-          <p>Welcome {loggedInUser.username} !</p>
-        </nav>
-        <NavLink to="/profile">Profile</NavLink>
-        <NavLink to="/favorites">Favorites</NavLink>
-        <NavLink to="/favorites">Matches</NavLink>
+        <div>
+          <h6>Welcome {loggedInUser.username} !</h6>
+        </div>
+        <NavLink className="nes-btn is-primary btn-sm" to="/profile">
+          My Profile
+        </NavLink>
+        <NavLink className="nes-btn is-primary btn-sm" to="/favorites">
+          Favorites
+        </NavLink>
+        <NavLink className="nes-btn is-primary btn-sm" to="/matches">
+          Matches
+        </NavLink>
         <NavLink to="/">
-          <button onClick={logoutUser}>Logout</button>
+          <button className="nes-btn is-primary btn-sm" onClick={logoutUser}>
+            Logout
+          </button>
         </NavLink>
       </nav>
     </>
   ) : (
     <>
-      <nav class="navbar navbar-light bg-light">
-        <form className="form-inline">
-          <NavLink className="btn btn-outline-primary" exact to="/login">
+      <nav className="navbar navbar-light bg-light ">
+        <img className="nav-tennis" alt="" src="/images/tennis1.png" />
+        <form className="form-inline ms-auto">
+          <NavLink className="nes-btn is-primary btn-sm" exact to="/login">
             Login
           </NavLink>
-          <NavLink className="btn btn-outline-primary" exact to="/signup">
+          <NavLink className="nes-btn is-primary btn-sm" exact to="/signup">
             Signup
           </NavLink>
         </form>

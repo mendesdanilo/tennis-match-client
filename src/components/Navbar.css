@@ -1,8 +1,9 @@
-
-.navbar {
-    display: flex;
-    justify-content: flex-end;
+.tennis-icon {
+    color: rgb(0, 162, 255);
+    margin-left: 20px;
 }
 
-
-
+.nav-tennis {
+    height: 40px;
+    width: 45px;
+}

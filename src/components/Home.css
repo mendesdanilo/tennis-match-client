@@ -1,0 +1,13 @@
+.tennis-section {
+    display: flex;
+    justify-content: center;
+}
+.tennis-image {
+    margin-top: 100px;
+    width: auto;
+    height : 300px;
+}
+
+p {
+    font: size 100px;
+}

@@ -9,11 +9,11 @@ class FavoritesList extends React.Component {
   async componentDidMount() {
     const response = await allFavorites();
     //console.log("test", response);
-    console.log(response.data);
+    //console.log(response.data);
     this.setState({
       favorites: response.data,
     });
-    console.log(this.state);
+    //console.log(this.state);
   }
 
   render() {
