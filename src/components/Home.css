@@ -1,7 +1,4 @@
-.tennis-section {
-    display: flex;
-    justify-content: center;
-}
+
 .tennis-image {
     margin-top: 100px;
     width: auto;
@@ -10,4 +7,11 @@
 
 p {
     font: size 100px;
+    text-align: center;
 }
+
+.images {
+    display: flex;
+    justify-content: center;
+}
+

@@ -15,7 +15,7 @@ const SwipeButtons = () => {
       <IconButton className="star">
         <StarRateIcon fontSize="large" />
       </IconButton>
-      <IconButton className="right">
+      <IconButton onClick="" className="right">
         <FavoriteIcon fontSize="large" />
       </IconButton>
     </div>

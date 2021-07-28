@@ -2,6 +2,7 @@ import React from "react";
 import { getProfile, updateProfile, uploadFile } from "../api";
 import { toast } from "react-toastify";
 import "./Profile.css";
+import { NavLink } from "react-router-dom";
 
 class Profile extends React.Component {
   state = {
@@ -31,8 +32,7 @@ class Profile extends React.Component {
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
-      [event.target.lastname]: event.target.value,
-      [event.target.username]: event.target.value,
+   
     });
   };
 
@@ -89,6 +89,11 @@ class Profile extends React.Component {
         </div>
 */
       <>
+        <div>
+          <NavLink className="btn btn-outline-primary btn-sm" to="/users">
+            Back
+          </NavLink>
+        </div>
         <div className="d-flex justify-content-center">
           <div class="card" style={{ width: "18rem" }}>
             <img src={imageUrl} class="card-img-top" alt="" />

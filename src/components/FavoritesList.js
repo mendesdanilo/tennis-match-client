@@ -1,5 +1,6 @@
 import React from "react";
 import { allFavorites } from "../api";
+import { NavLink } from "react-router-dom";
 
 class FavoritesList extends React.Component {
   state = {
@@ -19,7 +20,11 @@ class FavoritesList extends React.Component {
   render() {
     return (
       <>
-        <p>Favorites</p>
+        <div>
+          <NavLink className="btn btn-outline-primary btn-sm" to="/users">
+            Back
+          </NavLink>
+        </div>
         {this.state.favorites.map((favorite) => {
           return <p> {favorite.username} </p>;
         })}
