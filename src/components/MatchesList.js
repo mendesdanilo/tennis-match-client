@@ -1,18 +1,18 @@
 import React from "react";
-import { allFavorites } from "../api";
+import { allMatches } from "../api";
 import { NavLink } from "react-router-dom";
 
-class FavoritesList extends React.Component {
+class MatchesList extends React.Component {
   state = {
-    favorites: [],
+    matches: [],
   };
 
   async componentDidMount() {
-    const response = await allFavorites();
+    const response = await allMatches();
     //console.log("test", response);
     //console.log(response.data);
     this.setState({
-      favorites: response.data,
+      matches: response.data,
     });
     //console.log(this.state);
   }
@@ -25,12 +25,12 @@ class FavoritesList extends React.Component {
             Back
           </NavLink>
         </div>
-        {this.state.favorites.map((favorite) => {
-          return <p> {favorite.username} </p>;
+        {this.state.matches.map((match) => {
+          return <p> {match.username} </p>;
         })}
       </>
     );
   }
 }
 
-export default FavoritesList;
+export default MatchesList;

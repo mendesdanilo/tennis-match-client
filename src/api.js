@@ -23,6 +23,10 @@ export const allFavorites = () => {
   return axios.get(`${baseURL}/favorites`, { withCredentials: true });
 };
 
+export const allMatches = () => {
+  return axios.get(`${baseURL}/matches`, { withCredentials: true });
+};
+
 //profile
 export const getProfile = () => {
   return axios.get(`${baseURL}/currentuser`, {

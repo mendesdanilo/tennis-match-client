@@ -32,7 +32,6 @@ class Profile extends React.Component {
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
-   
     });
   };
 
@@ -90,23 +89,33 @@ class Profile extends React.Component {
 */
       <>
         <div>
-          <NavLink className="btn btn-outline-primary btn-sm" to="/users">
+          <NavLink className="nes-btn is-primary btn-sm" to="/users">
             Back
           </NavLink>
         </div>
         <div className="d-flex justify-content-center">
-          <div class="card" style={{ width: "18rem" }}>
+          <div class="form-row" style={{ width: "18rem" }}>
             <img src={imageUrl} class="card-img-top" alt="" />
-            <div class="card-body">
-              <form class="card-text" onSubmit={this.handleFormSubmit}>
-                <label>Photo</label>
+            <div class="form-row">
+              <form class="needs-validation" onSubmit={this.handleFormSubmit}>
+                <label>Upload Photo</label>
                 <input
+                  class="form-control"
                   type="file"
                   name="image"
                   onChange={this.handleChangeFile}
                 />
+                <label>Username</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="username"
+                  onChange={this.handleChange}
+                  value={username}
+                />
                 <label>Name</label>
                 <input
+                  class="form-control"
                   type="text"
                   name="name"
                   onChange={this.handleChange}
@@ -114,22 +123,13 @@ class Profile extends React.Component {
                 />
                 <label>Last name</label>
                 <input
+                  class="form-control"
                   type="text"
                   name="lastname"
                   onChange={this.handleChange}
                   value={lastname}
                 />
-                <label>Username</label>
-                <input
-                  type="text"
-                  name="username"
-                  onChange={this.handleChange}
-                  value={username}
-                />
-                <button
-                  className="btn btn-outline-primary btn-sm"
-                  type="submit"
-                >
+                <button className="nes-btn is-primary btn-sm" type="submit">
                   Save
                 </button>
               </form>

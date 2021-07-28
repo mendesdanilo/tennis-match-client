@@ -5,8 +5,9 @@ import Login from "./components/Login";
 import UserList from "./components/UserList";
 import UserDetails from "./components/UserDetails";
 import FavoritesList from "./components/FavoritesList";
+import MatchesList from "./components/MatchesList";
+
 import Profile from "./components/Profile";
-import SwipeButtons from "./components/SwipeButtons";
 import Home from "./components/Home";
 import PrivateRoute from "./components/PrivateRoute";
 import "react-toastify/dist/ReactToastify.css";
@@ -51,11 +52,11 @@ class App extends React.Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/users">
             <UserList />
-            <SwipeButtons />
           </Route>
           <Route exact path="/users/:id" component={UserDetails} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/favorites" component={FavoritesList} />
+          <Route exact path="/matches" component={MatchesList} />
           <Route exact path="/profile" component={Profile} />
           <Route
             exact
