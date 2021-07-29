@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import TinderCard from "react-tinder-card";
-import "./UserList.css";
 import { getAllUsers, addFavorite } from "../api";
 import CloseIcon from "@material-ui/icons/Close";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import StarRateIcon from "@material-ui/icons/StarRate";
 import IconButton from "@material-ui/core/IconButton";
+
+import "./UserList.css";
+
 
 function UserList() {
   const [users, setUsers] = useState([]);
@@ -36,6 +38,14 @@ function UserList() {
     }
   };
 
+  const swipeLeft = async (direction, id) => {
+    console.log("You swiped: " + direction);
+    console.log("ID " + id);
+    if (direction === "left") {
+      await fetchUsers();
+    }
+  };
+
   return (
     <div>
       <div className="tinderCards">
@@ -57,7 +67,10 @@ function UserList() {
               </div>
             </TinderCard>
             <div className="swipeButtons">
-              <IconButton className="left">
+              <IconButton
+                onClick={() => swipeLeft("left", user._id)}
+                className="left"
+              >
                 <CloseIcon fontSize="large" />
               </IconButton>
               <IconButton className="star">
