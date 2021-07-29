@@ -26,7 +26,19 @@ class MatchesList extends React.Component {
           </NavLink>
         </div>
         {this.state.matches.map((match) => {
-          return <p> {match.username} </p>;
+          return (
+            <>
+              <div className="d-flex justify-content-center">
+                <div class="form-row" style={{ width: "18rem" }}>
+                  <img src={match.imageUrl} class="card-img-top" alt="" />
+                  <div class="form-row">
+                    <p> {match.username} </p>
+                    <p> {match.name} </p>
+                  </div>
+                </div>
+              </div>
+            </>
+          );
         })}
       </>
     );

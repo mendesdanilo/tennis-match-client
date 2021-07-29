@@ -26,7 +26,19 @@ class FavoritesList extends React.Component {
           </NavLink>
         </div>
         {this.state.favorites.map((favorite) => {
-          return <p> {favorite.username} </p>;
+          return (
+            <>
+              <div className="d-flex justify-content-center">
+                <div class="form-row" style={{ width: "18rem" }}>
+                  <img src={favorite.imageUrl} class="card-img-top" alt="" />
+                  <div class="form-row">
+                    <p> {favorite.username} </p>
+                    <p> {favorite.name} </p>
+                  </div>
+                </div>
+              </div>
+            </>
+          );
         })}
       </>
     );

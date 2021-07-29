@@ -8,7 +8,6 @@ import IconButton from "@material-ui/core/IconButton";
 
 import "./UserList.css";
 
-
 function UserList() {
   const [users, setUsers] = useState([]);
 
@@ -39,11 +38,20 @@ function UserList() {
   };
 
   const swipeLeft = async (direction, id) => {
-    console.log("You swiped: " + direction);
-    console.log("ID " + id);
+    console.log("You clicked: " + direction + " for " + id);  
     if (direction === "left") {
-      await fetchUsers();
+      setUsers(users.slice(0, -1));
+      debugger;
+      if (users.length === 1) {
+        fetchUsers();
+      }
     }
+  };
+
+  const favoriteButton = async (id) => {
+    console.log("You clicked the favorite button: ");
+    await addFavorite(id);
+    await fetchUsers();
   };
 
   return (
@@ -73,7 +81,10 @@ function UserList() {
               >
                 <CloseIcon fontSize="large" />
               </IconButton>
-              <IconButton className="star">
+              <IconButton
+                onClick={() => favoriteButton(user._id)}
+                className="star"
+              >
                 <StarRateIcon fontSize="large" />
               </IconButton>
               <IconButton

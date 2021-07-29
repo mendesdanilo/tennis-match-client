@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { logout } from "../api";
-import SportsTennisIcon from "@material-ui/icons/SportsTennis";
 import "./Navbar.css";
 
 function Navbar({ loggedInUser, setLoggedInUser }) {

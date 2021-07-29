@@ -70,23 +70,6 @@ class Profile extends React.Component {
   render() {
     const { imageUrl, username, name, lastname, gender, role } = this.state;
     return (
-      /*
-        <div class="card" style={{ width: "18rem" }}>
-          <img src={imageUrl} class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">{name}</h5>
-            <p class="card-text">{lastname}</p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-          </ul>
-          <div class="card-body">
-            <button type="submit">Save</button>
-          </div>
-        </div>
-*/
       <>
         <div>
           <NavLink className="nes-btn is-primary btn-sm" to="/users">
