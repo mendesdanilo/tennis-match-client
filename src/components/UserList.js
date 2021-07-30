@@ -5,6 +5,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import StarRateIcon from "@material-ui/icons/StarRate";
 import IconButton from "@material-ui/core/IconButton";
+import { toast } from "react-toastify";
 
 import "./UserList.css";
 
@@ -24,7 +25,11 @@ function UserList() {
     console.log("You swiped: " + direction);
     console.log("ID " + id);
     if (direction === "right") {
-      await addFavorite(id);
+      const response = await addFavorite(id);
+      if (response.data.newMatch) {
+        console.log("match");
+        toast.success("you have a new match");
+      }
     }
   };
 
@@ -32,13 +37,18 @@ function UserList() {
     console.log("You swiped: " + direction);
     console.log("ID " + id);
     if (direction === "right") {
-      await addFavorite(id);
+      const response = await addFavorite(id);
+      if (response.data.newMatch) {
+        console.log("match");
+        toast.success("you have a new match");
+      }
+
       await fetchUsers();
     }
   };
 
   const swipeLeft = async (direction, id) => {
-    console.log("You clicked: " + direction + " for " + id);  
+    console.log("You clicked: " + direction + " for " + id);
     if (direction === "left") {
       setUsers(users.slice(0, -1));
       debugger;
@@ -50,7 +60,10 @@ function UserList() {
 
   const favoriteButton = async (id) => {
     console.log("You clicked the favorite button: ");
-    await addFavorite(id);
+    const response = await addFavorite(id);
+    if (response.data.newMatch) {
+      console.log("you have a new match");
+    }
     await fetchUsers();
   };
 
